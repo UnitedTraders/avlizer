@@ -281,8 +281,6 @@ register_schema(RegistryURL, Subject, SchemaJSON) ->
       #{<<"id">> := Id} = jsone:decode(iolist_to_binary(RspBody)),
       {ok, Id};
     {error, Reason} ->
-      error_logger:error_msg("Failed to register schema to ~s:\n~p",
-                             [URL, Reason]),
       {error, Reason}
   end.
 
